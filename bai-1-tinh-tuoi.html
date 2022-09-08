@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tính tuổi</h1>
+<label>Nhập tuổi em</label>
+<input type="text" id="age">
+<button value="Tính tuổi" onclick="tinh()">Tính</button>
+<br> <br>
+<label id="ageAnh"></label> <br> <br>
+<label id="ageBo"></label>
+<script>
+    function tinh(){
+        let tuoiEm=+document.getElementById('age').value;
+        let tuoiAnh=tuoiEm+3;
+        let tuoiBo=tuoiAnh*6;
+        document.getElementById('ageAnh').innerHTML="Số tuổi của anh là: " +tuoiAnh+" tuổi";
+        document.getElementById('ageBo').innerHTML="Số tuổi của bố là: " +tuoiBo+ " tuổi";
+    }
+</script>
+</body>
+</html>

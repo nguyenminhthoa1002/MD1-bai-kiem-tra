@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tuổi theo Can chi</h1>
+<label>Nhập năm sinh</label>
+<input type="text" id="namSinh"> <br> <br>
+<button value="Check" onclick="tinh()">Check</button>
+<br> <br>
+<label id="ketQua"></label>
+<script>
+    function tinh(){
+        let a=+document.getElementById('namSinh').value;
+        let can=(a%10);
+        let chi=(a%12);
+        let checkCan;
+        let checkChi;
+        console.log(can)
+        console.log(chi)
+        switch (can) {
+            case 0:
+                checkCan = 'CANH ';
+                break;
+            case 1:
+                checkCan = 'TÂN ';
+                break;
+            case 2:
+                checkCan = 'NHÂM ';
+                break;
+            case 3:
+                checkCan = 'QUÝ ';
+                break;
+            case 4:
+                checkCan = 'GIÁP ';
+                break;
+            case 5:
+                checkCan = 'ẤT ';
+                break;
+            case 6:
+                checkCan = 'BÍNH ';
+                break;
+            case 7:
+                checkCan = 'ĐINH ';
+                break;
+            case 8:
+                checkCan = 'MẬU ';
+                break;
+            case 9:
+                checkCan = 'KỶ ';
+                break;
+            default:
+                document.write('Not found');
+        }
+
+                switch (chi) {
+                    case 0:
+                        checkChi = 'THÂN';
+                        break;
+                    case 1:
+                        checkChi = 'DẬU';
+                        break;
+                    case 2:
+                        checkChi = 'TUẤT';
+                        break;
+                    case 3:
+                        checkChi = 'HỢI';
+                        break;
+                    case 4:
+                        checkChi = 'TÝ';
+                        break;
+                    case 5:
+                        checkChi = 'SỬU';
+                        break;
+                    case 6:
+                        checkChi = 'DẦN';
+                        break;
+                    case 7:
+                        checkChi = 'MÃO';
+                        break;
+                    case 8:
+                        checkChi = 'THÌN';
+                        break;
+                    case 9:
+                        checkChi = 'TỴ';
+                        break;
+                    case 10:
+                        checkChi = 'NGỌ';
+                        break;
+                    case 11:
+                        checkChi = 'MÙI';
+                        break;
+                    default:
+                        document.write('Not found');
+                } document.getElementById('ketQua').innerHTML= checkCan + checkChi;
+    }
+</script>
+</body>
+</html>

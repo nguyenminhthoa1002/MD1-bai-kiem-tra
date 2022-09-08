@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img id="tom" src="image/tom.jpg">
+<img id="jerry" src="image/jerry.jpg" alt="">
+<script>
+  let tom = document.getElementById('tom');
+  let jerry = document.getElementById('jerry');
+  function init() {
+    tom.style.position = 'absolute';
+    tom.style.left = 0 + 'px';
+    tom.style.top = 0 + 'px';
+    tom.style.width = 200 + 'px';
+    tom.style.height = 100 +'px';
+    jerry.style.position = 'absolute';
+    jerry.style.left = 350 + 'px';
+    jerry.style.top = 150 +'px';
+    jerry.style.width = 100 +'px';
+    jerry.style.height = 100 + 'px';
+  }
+  init()
+
+  function moveRight(){
+      tom.style.left = parseInt(tom.style.left) + 10+ 'px';
+  }
+  function moveLeft(){
+      tom.style.left= parseInt(tom.style.left) - 10 +'px';
+  }
+  function moveUp(){
+      tom.style.top=parseInt(tom.style.top) -10 +'px';
+  }
+  function moveDown(){
+      tom.style.top=parseInt(tom.style.top) + 10 +'px';
+  }
+  function moveWithKeyBoard(evt){
+      switch (evt.keyCode){
+          case 39:
+              moveRight();
+              break;
+          case 37:
+              moveLeft();
+              break;
+          case 38:
+              moveUp();
+              break;
+          case 40:
+              moveDown();
+              break;
+      }
+      checkCollision();
+  }
+  window.addEventListener('keydown',moveWithKeyBoard)
+
+  function checkCollision(){
+      if (parseInt(tom.style.left)+parseInt(tom.style.width) >= parseInt(jerry.style.left)
+      && parseInt(tom.style.left) <= parseInt(jerry.style.left)+parseInt(jerry.style.width)
+      && parseInt(tom.style.top) <= parseInt(jerry.style.top)+parseInt(jerry.style.height)
+      && parseInt(tom.style.top)+parseInt(tom.style.height) >= parseInt(jerry.style.top)) {
+          alert('I got ya!!!!!')
+      }
+  }
+</script>
+</body>
+</html>

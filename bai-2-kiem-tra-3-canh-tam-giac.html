@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Kiểm tra tam giác vuông</h1>
+<label>Nhập số đo 3 cạnh</label> <br> <br>
+<input type="text" id="canhA" placeholder="cạnh a? (a >0)"> <br> <br>
+<input type="text" id="canhB" placeholder="cạnh b? (b >0)"> <br> <br>
+<input type="text" id="canhC" placeholder="cạnh c? (c >0)"> <br> <br>
+<button value="Check" onclick="tinh()">Check</button>
+<br> <br>
+<label id="ketQua"></label>
+<script>
+    function tinh() {
+        let a=+document.getElementById('canhA').value;
+        let b=+document.getElementById('canhB').value;
+        let c=+document.getElementById('canhC').value;
+        let d=a+b-c;
+        let e=a+c-b;
+        let f=b+c-a;
+        let tamGiacvuong1=Math.pow(a,2)-Math.pow(b,2)-Math.pow(c,2);
+        let tamGiacvuong2=Math.pow(b,2)-Math.pow(a,2)-Math.pow(c,2);
+        let tamGiacvuong3=Math.pow(c,2)-Math.pow(a,2)-Math.pow(b,2);
+        if (d>0 && e>0 && f>0){
+            if (tamGiacvuong1===0||tamGiacvuong2===0||tamGiacvuong3===0){
+                document.getElementById('ketQua').innerHTML=a+', '+b+', '+c+' là 3 cạnh của tam giác vuông';
+            } else {
+                document.getElementById('ketQua').innerHTML=a+', '+b+', '+c+' không là 3 cạnh của tam giác vuông';
+            }
+        } else {
+            document.getElementById('ketQua').innerHTML=a+', '+b+', '+c+' không là 3 cạnh của tam giác';
+        }
+    }
+</script>
+</body>
+</html>
